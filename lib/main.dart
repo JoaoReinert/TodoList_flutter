@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list_lince/domain/todo_list/repository/todo_list_repository_imp.dart';
-import 'package:todo_list_lince/domain/todo_list/usecase/todo_list_usecase_imp.dart';
-import 'package:todo_list_lince/domain/todo_list/webservice/todo_list_webservice.dart';
+import 'package:todo_list_lince/infrastructure/todo_list/webservice/todo_list_webservice.dart';
 import 'package:todo_list_lince/global.dart';
 
-import 'domain/todo_list/presentation/todo_list_screen.dart';
+import 'infrastructure/todo_list/presentation/todo_list_screen.dart';
 
 void main() async {
   final webService = TodoListWS();
