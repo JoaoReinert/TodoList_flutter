@@ -22,30 +22,32 @@ class TodoListState extends ChangeNotifier {
   List<Task> get listTasks => _listTasks;
 
   void init() {
-    selectAllTasks();
+    getTasks();
     notifyListeners();
   }
 
   void load() {
-    selectAllTasks();
+    getTasks();
     notifyListeners();
   }
 
-  Future<void> adicionarTarefa() async {
-    await _useCase.adicionarTarefa(Task(name: _controllerTask.text));
+  Future<void> addTask() async {
+    await _useCase.addTask(Task(name: _controllerTask.text));
     load();
     controllerTask.clear();
   }
 
-  Future<void> selectAllTasks() async {
+  Future<void> getTasks() async {
     try {
-      final tasks = await _useCase.selectAllTasks();
+      final tasks = await _useCase.getTasks();
+
       _listTasks
         ..clear()
         ..addAll(tasks);
+
       notifyListeners();
     } catch (e) {
-      print(e);
+      rethrow;
     }
   }
 
@@ -60,7 +62,7 @@ class TodoListState extends ChangeNotifier {
       );
       load();
     } catch (e) {
-      print(e);
+      rethrow;
     }
   }
 
@@ -68,7 +70,7 @@ class TodoListState extends ChangeNotifier {
     try {
       await _useCase.deleteTask(task);
     } catch (e) {
-      print(e);
+      rethrow;
     }
   }
 
@@ -87,7 +89,7 @@ class TodoListState extends ChangeNotifier {
       );
       notifyListeners();
     } catch (e) {
-      print(e);
+      rethrow;
     }
   }
 }

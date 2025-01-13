@@ -1,4 +1,3 @@
-
 import 'package:todo_list_lince/domain/todo_list_usecase.dart';
 
 import '../../entities/task_entity.dart';
@@ -10,23 +9,19 @@ TodoListUseCase newTodoListUseCase(TodoListRepository todoListRepository) {
 }
 
 class TodoListUseCaseImp implements TodoListUseCase {
-
   final TodoListRepository _repository;
+
   TodoListUseCaseImp(this._repository);
 
   @override
-  Future<void> adicionarTarefa(Task task) =>
-      _repository.adicionarTarefa(task);
+  Future<void> addTask(Task task) => _repository.addTask(task);
 
   @override
-  Future<List<Task>> selectAllTasks() =>
-      _repository.selectAllTasks();
+  Future<List<Task>> getTasks() => _repository.getTasks();
 
   @override
-  Future<void> updateTask(Task task) =>
-      _repository.updateTask(task);
+  Future<void> updateTask(Task task) => _repository.updateTask(task);
 
   @override
-  Future<void> deleteTask (Task task) =>
-      _repository.deleteTask(task);
+  Future<void> deleteTask(Task task) => _repository.deleteTask(task);
 }

@@ -2,9 +2,9 @@ import 'package:todo_list_lince/entities/task_entity.dart';
 
 abstract class TodoListRepository {
 
-  Future<void> adicionarTarefa(Task task);
+  Future<void> addTask(Task task);
 
-  Future<List<Task>> selectAllTasks();
+  Future<List<Task>> getTasks();
 
   Future<void> updateTask (Task task);
 

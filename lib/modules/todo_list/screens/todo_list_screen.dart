@@ -30,10 +30,7 @@ class TodoListScreen extends StatelessWidget {
               return _TaskTile(
                 task: task,
                 isCompleted: (value) {
-                  task.isCompleted = value!;
-                  task.isCompleted == true
-                      ? task.isCompletedAsInt
-                      : task.isCompleted == false;
+                  task.isCompleted = value;
                   state.isCompleted(task);
                 },
                 delete: () async {
@@ -126,7 +123,7 @@ class _TaskTile extends StatelessWidget {
               child: Checkbox(
                 checkColor: Colors.white,
                 activeColor: Colors.blue,
-                value: task.isCompleted == true,
+                value: task.isCompleted ?? true,
                 onChanged: isCompleted,
               ),
             ),
@@ -214,7 +211,7 @@ class DialogRegisterTask extends StatelessWidget {
                       if (state.formKey.currentState!.validate()) {
                         isEditing
                             ? await state.updateTask(task!)
-                            : await state.adicionarTarefa();
+                            : await state.addTask();
                         Navigator.pop(context);
                       }
                     },

@@ -1,4 +1,3 @@
-
 import 'package:todo_list_lince/data_store/todo_list_repository.dart';
 
 import '../../entities/task_entity.dart';
@@ -6,16 +5,17 @@ import '../../database/database.dart';
 import '../../database/tables/todo_list_tables/dart/task_table.dart';
 import '../../webservice/todo_list_webservice.dart';
 
-TodoListRepository newTodoListRepository (TodoListWS todoListWebService) {
+TodoListRepository newTodoListRepository(TodoListWS todoListWebService) {
   return TodoListRepositoryImp(todoListWebService);
 }
 
 class TodoListRepositoryImp implements TodoListRepository {
   final TodoListWS webService;
+
   TodoListRepositoryImp(this.webService);
 
   @override
-  Future<void> adicionarTarefa(Task task) async {
+  Future<void> addTask(Task task) async {
     final db = await getDataBase();
     await db.insert(
       TaskTable.tableName,
@@ -27,7 +27,7 @@ class TodoListRepositoryImp implements TodoListRepository {
   }
 
   @override
-  Future<List<Task>> selectAllTasks() async {
+  Future<List<Task>> getTasks() async {
     final db = await getDataBase();
     final List<Map<String, dynamic>> result = await db.query(
       TaskTable.tableName,
