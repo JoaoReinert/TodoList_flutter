@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:todo_list_lince/domain/entities/task_entity.dart';
+import 'package:todo_list_lince/entities/task_entity.dart';
 
-import '../usecase/todo_list_usecase.dart';
+import '../../../domain/todo_list_usecase.dart';
 
 /// State for task list screen
 class TodoListState extends ChangeNotifier {

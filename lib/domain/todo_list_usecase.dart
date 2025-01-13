@@ -1,4 +1,4 @@
-import '../../../domain/entities/task_entity.dart';
+import '../entities/task_entity.dart';
 
 abstract class TodoListUseCase {
   Future<void> adicionarTarefa(Task task);

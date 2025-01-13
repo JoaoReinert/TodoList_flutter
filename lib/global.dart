@@ -1,8 +1,8 @@
+import 'domain/todo_list_usecase.dart';
 
-import 'infrastructure/todo_list/repository/todo_list_repository_imp.dart';
-import 'infrastructure/todo_list/usecase/todo_list_usecase.dart';
-import 'infrastructure/todo_list/usecase/todo_list_usecase_imp.dart';
-import 'infrastructure/todo_list/webservice/todo_list_webservice.dart';
+import 'modules/todo_list/todo_list_repository_imp.dart';
+import 'modules/todo_list/todo_list_usecase_imp.dart';
+import 'webservice/todo_list_webservice.dart';
 
 late TodoListUseCase todoListUseCase;
 

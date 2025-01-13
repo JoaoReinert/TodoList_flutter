@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../global.dart';
-import '../../utils/alert_dialog_default.dart';
+import '../../../utils/alert_dialog_default.dart';
 
-import '../../../domain/entities/task_entity.dart';
-import '../../utils/delete_button_default.dart';
-import '../../utils/edit_button_default.dart';
+import '../../../entities/task_entity.dart';
+import '../../../utils/delete_button_default.dart';
+import '../../../utils/edit_button_default.dart';
 import '../states/todo_list_state.dart';
-
 
 /// General task list screen
 class TodoListScreen extends StatelessWidget {

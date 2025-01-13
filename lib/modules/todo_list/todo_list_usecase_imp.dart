@@ -1,9 +1,9 @@
 
-import 'package:todo_list_lince/infrastructure/todo_list/usecase/todo_list_usecase.dart';
+import 'package:todo_list_lince/domain/todo_list_usecase.dart';
 
-import '../../../domain/entities/task_entity.dart';
+import '../../entities/task_entity.dart';
 
-import '../repository/todo_list_repository.dart';
+import '../../data_store/todo_list_repository.dart';
 
 TodoListUseCase newTodoListUseCase(TodoListRepository todoListRepository) {
   return TodoListUseCaseImp(todoListRepository);

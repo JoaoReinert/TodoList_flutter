@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import '../tables/todo_list_tables/task_table.dart';
+import 'tables/todo_list_tables/dart/task_table.dart';
 
 Future<Database> getDataBase() async {
   final path = join(

@@ -1,10 +1,10 @@
 
-import 'package:todo_list_lince/infrastructure/todo_list/repository/todo_list_repository.dart';
+import 'package:todo_list_lince/data_store/todo_list_repository.dart';
 
-import '../../../domain/entities/task_entity.dart';
-import '../../data_store/database/database.dart';
-import '../../data_store/tables/todo_list_tables/task_table.dart';
-import '../webservice/todo_list_webservice.dart';
+import '../../entities/task_entity.dart';
+import '../../database/database.dart';
+import '../../database/tables/todo_list_tables/dart/task_table.dart';
+import '../../webservice/todo_list_webservice.dart';
 
 TodoListRepository newTodoListRepository (TodoListWS todoListWebService) {
   return TodoListRepositoryImp(todoListWebService);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list_lince/infrastructure/todo_list/webservice/todo_list_webservice.dart';
+import 'package:todo_list_lince/webservice/todo_list_webservice.dart';
 import 'package:todo_list_lince/global.dart';
 
-import 'infrastructure/todo_list/presentation/todo_list_screen.dart';
+import 'modules/todo_list/screens/todo_list_screen.dart';
 
 void main() async {
   final webService = TodoListWS();
@@ -26,5 +26,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

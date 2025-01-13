@@ -1,4 +1,4 @@
-import 'package:todo_list_lince/domain/entities/task_entity.dart';
+import 'package:todo_list_lince/entities/task_entity.dart';
 
 abstract class TodoListRepository {
 
